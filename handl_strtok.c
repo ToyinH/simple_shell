@@ -22,7 +22,7 @@ char **handl_strtok(char *string, char *delimiter)
 		return (NULL);
 
 	ptr[i] = strtok(string, " ");
-	while(ptr[i] != NULL)
+	while (ptr[i] != NULL)
 	{
 		i++;
 		ptr[i] = strtok(NULL, " ");
