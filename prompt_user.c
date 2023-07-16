@@ -3,38 +3,42 @@
 /**
  * prompt_user - function that handles user prompts
  * @av: argument vector
- * @envt: environment
+ * @env: environment
  */
 
-void prompt_user(char **av, char **envt)
+void prompt_user(char **av, char **env)
 {
 	char *str = NULL;
-	int i = 0, status;
+	char *new_str;
+	int i;
 	char **argv;
-	pid_t child_pid;
 
 	while (true)
 	{
 		if (isatty(STDIN_FILENO))
 			printf("cisfun$ ");
 		str = handl_getline();
-		i = 0;
-		while (str[i])
+		if (str[0] != '\n')
 		{
-			if (str[i] == '\n')
-				str[i] = '\0';
-			i++;
-		}
-		argv = handl_strtok(str, " ");
-		child_pid = fork();
-		if (child_pid == -1)
-			free(str), exit(EXIT_FAILURE);
-		if (child_pid == 0)
-		{
-			if (execve(argv[0], argv, envt) == -1)
+			i = 0;
+			while (str[i])
+			{
+				if (str[i] == '\n')
+					str[i] = '\0';
+				i++;
+			}
+			argv = handl_strtok(str, " ");
+			if (custom_strcmp("exit", argv[0]) == 0)
+				exit(EXIT_FAILURE);
+			new_str = file_check(argv[0]);
+			if (new_str != NULL)
+				argv[0] = new_str;
+			if (path_check(argv[0]) == 0)
+			{
+				fork_exec(argv, env, av);
+			}
+			else
 				printf("%s: No such file or directory\n", av[0]);
 		}
-		else
-			wait(&status);
 	}
 }
