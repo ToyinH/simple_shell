@@ -20,5 +20,9 @@ char *file_check(char *string);
 void fork_exec(char **argv, char **env, char **av);
 ssize_t custom_read(int fd, void *buf, size_t count);
 ssize_t custom_getline(char **lineptr, size_t *n);
+void free_argv(char **argv);
+void free_argv2(char **argv);
+void premade_path(char **argv, char **av, char **env, char *str);
+void unpath(char **argv, char **av, char **env, char *str);
 
 #endif
