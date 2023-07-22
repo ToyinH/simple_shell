@@ -14,5 +14,9 @@ int main(int ac, char **av, char **env)
 	{
 		prompt_user(av, env);
 	}
+	else
+	{
+		return (-1);
+	}
 	return (0);
 }
