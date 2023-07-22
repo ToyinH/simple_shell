@@ -32,16 +32,21 @@ void prompt_user(char **av, char **env)
 			}
 			argv = handl_strtok(str, " ");
 			if (custom_strcmp("exit", argv[0]) == 0)
-				exit(EXIT_FAILURE);
-			new_str = file_check(argv[0]);
-			if (new_str != NULL)
-				argv[0] = new_str;
-			if (path_check(argv[0]) == 0)
 			{
-				fork_exec(argv, env, av);
+				free(str);
+				free(argv);
+				exit(EXIT_FAILURE);
 			}
-			else
-				printf("%s: No such file or directory\n", av[0]);
+			new_str = file_check(argv[0]);
+			if (new_str == NULL)
+			{
+				premade_path(argv, av, env, str);
+			}
+			else if (new_str != NULL)
+			{
+				argv[0] = new_str;
+				unpath(argv, av, env, str);
+			}
 		}
 	}
 }
