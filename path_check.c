@@ -32,8 +32,14 @@ int path_check(char *string)
 	}
 	buffer[j] = '\0';
 	new_str = file_check(buffer);
+	free(buffer);
 	if (new_str == NULL)
+	{
 		return (1);
+	}
 	else
+	{
+		free(new_str);
 		return (0);
+	}
 }
