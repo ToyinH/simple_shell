@@ -32,7 +32,7 @@ ssize_t custom_getline(char **lineptr, size_t *n)
 	{
 		read_count = custom_read(STDIN_FILENO, &c, 1);
 		if (read_count <= 0)
-			break;
+			return (-1);
 		if (c == '\n')
 		{
 			(*lineptr)[pos] = '\0';
