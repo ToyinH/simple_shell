@@ -7,8 +7,10 @@
  */
 char *file_check(char *string)
 {
-	char *temp, *new_string;
+	char *temp;
+	char *new_string = NULL;
 	struct dirent *reader;
+	int x;
 
 	DIR *dir = opendir("/bin/");
 
@@ -16,17 +18,24 @@ char *file_check(char *string)
 		return (NULL);
 	reader = readdir(dir);
 	if (reader == NULL)
+	{
+		closedir(dir);
 		return (NULL);
+	}
 	while (reader != NULL)
 	{
 		temp = reader->d_name;
 		if (custom_strcmp(string, temp) == 0)
 		{
-			new_string = malloc(sizeof(char) * 32);
+			x = strlen("/bin/") + strlen(string) + 1;
+			new_string = malloc(sizeof(char) * x);
 			if (new_string == NULL)
+			{
+				closedir(dir);
 				return (NULL);
+			}
 			strcpy(new_string, "/bin/");
-			new_string = strcat(new_string, string);
+			strcat(new_string, string);
 			closedir(dir);
 			return (new_string);
 		}
