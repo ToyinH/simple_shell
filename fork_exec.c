@@ -13,7 +13,7 @@ void fork_exec(char **argv, char **env, char **av)
 	child_pid = fork();
 	if (child_pid == -1)
 	{
-		free(argv);
+		free_argv(argv);
 		exit(EXIT_FAILURE);
 	}
 	if (child_pid == 0)
