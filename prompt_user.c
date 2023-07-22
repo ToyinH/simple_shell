@@ -8,10 +8,8 @@
 
 void prompt_user(char **av, char **env)
 {
-	char *str = NULL;
-	char *new_str;
+	char *str = NULL, *new_str, **argv;
 	int i;
-	char **argv;
 
 	while (true)
 	{
@@ -39,9 +37,7 @@ void prompt_user(char **av, char **env)
 			}
 			new_str = file_check(argv[0]);
 			if (new_str == NULL)
-			{
 				premade_path(argv, av, env, str);
-			}
 			else if (new_str != NULL)
 			{
 				argv[0] = new_str;
