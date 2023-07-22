@@ -27,5 +27,10 @@ char **handl_strtok(char *string, char *delimiter)
 		i++;
 		ptr[i] = strtok(NULL, " ");
 	}
+	if (i == MAX)
+	{
+		free(ptr);
+		return (NULL);
+	}
 	return (ptr);
 }
