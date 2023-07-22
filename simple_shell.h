@@ -25,7 +25,8 @@ void free_argv2(char **argv);
 void premade_path(char **argv, char **av, char **env, char *str);
 void unpath(char **argv, char **av, char **env, char *str);
 
-char *strcat(char *str1, char *str2, int n_byte)
-char *strcpy(char *str_to, char *str1, int n_size)
+char *strcat(char *str1, char *str2, int n_byte);
+char *strcpy(char *str_to, char *str1, int n_size);
+int strlen(char *str);
 
 #endif
