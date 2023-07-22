@@ -1,6 +1,11 @@
 #include "simple_shell.h"
 /**
- *
+ * premade_path - function to handle premade path command
+ * such as /bin/ls
+ * @argv: argument vector
+ * @av: argument vector from main file
+ * @env: enviroment
+ * @str: string
  */
 void premade_path(char **argv, char **av, char **env, char *str)
 {
