@@ -1,6 +1,11 @@
 #include "simple_shell.h"
 /**
- *
+ * unpath - function handling command with no path e.g ls
+ * and command with arg e.g ls -l
+ * @argv: argument vector
+ * @av: argument vector from main funtion
+ * @env: environment
+ * @str: string
  */
 
 void unpath(char **argv, char **av, char **env, char *str)
