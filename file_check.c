@@ -27,15 +27,15 @@ char *file_check(char *string)
 		temp = reader->d_name;
 		if (custom_strcmp(string, temp) == 0)
 		{
-			x = strlen("/bin/") + strlen(string) + 1;
+			x = _strlen("/bin/") + _strlen(string) + 1;
 			new_string = malloc(sizeof(char) * x);
 			if (new_string == NULL)
 			{
 				closedir(dir);
 				return (NULL);
 			}
-			strcpy(new_string, "/bin/");
-			strcat(new_string, string);
+			_strcpy(new_string, "/bin/");
+			_strcat(new_string, string);
 			closedir(dir);
 			return (new_string);
 		}

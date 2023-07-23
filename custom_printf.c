@@ -7,10 +7,10 @@
  * Return: void
  */
 
-void custom_printf(const char *str_in)
+void _printf(char *str_in)
 {
 	size_t str_len;
 
-	str_len = strlen(str_in);
+	str_len = _strlen(str_in);
 	write(STDOUT_FILENO, str_in, str_len);
 }

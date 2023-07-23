@@ -8,7 +8,7 @@
  * Return: the result of the concatenation.
  */
 
-char *strcat(char *str1, char *str2, int n_byte)
+char *_strcat(char *str1, char *str2, int n_byte)
 {
 	char *new_str = str1;
 	int i = 0, j = 0;

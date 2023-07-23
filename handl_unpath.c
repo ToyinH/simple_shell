@@ -15,7 +15,10 @@ void unpath(char **argv, char **av, char **env, char *str)
 		fork_exec(argv, env, av);
 	}
 	else
-		printf("%s: No such file or directory\n", av[0]);
+	{
+		_printf(av[0]);
+		_printf(": No such file or directory\n");
+	}
 	free(str);
 	if (argv[1] == NULL)
 		free_argv(argv);
