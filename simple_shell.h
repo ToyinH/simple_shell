@@ -28,5 +28,6 @@ void unpath(char **argv, char **av, char **env, char *str);
 char *strcat(char *str1, char *str2, int n_byte);
 char *strcpy(char *str_to, char *str1, int n_size);
 int strlen(char *str);
+void custom_printf(const char *str_in);
 
 #endif
