@@ -19,7 +19,10 @@ void fork_exec(char **argv, char **env, char **av)
 	if (child_pid == 0)
 	{
 		if (execve(argv[0], argv, env) == -1)
-			printf("%s: No such file or directory\n", av[0]);
+		{
+			_printf(av[0]);
+			_printf(": No such file or directory\n");
+		}
 	}
 	else
 		wait(&status);

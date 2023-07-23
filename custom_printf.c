@@ -1,7 +1,7 @@
 #include "simple_shell.h"
 
 /**
- * custom_printf - this function prints the supplied string
+ * _printf - this function prints the supplied string
  * to the specified STDOUT
  * @str_in: the string to be printed
  * Return: void
