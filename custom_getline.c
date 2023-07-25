@@ -42,7 +42,7 @@ ssize_t custom_getline(char **lineptr, size_t *n)
 		if (pos >= *n - 1)
 		{
 			*n = *n * 2;
-			new_lineptr = realloc(*lineptr, *n);
+			new_lineptr = _realloc(*lineptr, *n);
 			if (new_lineptr == NULL)
 			{
 				free(*lineptr);
