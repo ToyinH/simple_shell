@@ -30,6 +30,6 @@ char *_strcpy(char *str_to, char *str1);
 int _strlen(char *str);
 void _printf(char *str_in);
 char *_realloc(char *pntr, size_t new_mem_size);
-char *_memcpy(char* dest, char* src, size_t n);
+char *_memcpy(char *dest, char *src, size_t n);
 
 #endif
