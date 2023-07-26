@@ -5,5 +5,6 @@
  */
 void handle_sigint (int signum __attribute__((unused)))
 {
-	exit(EXIT_SUCCESS);
+	_printf("\n");
+	write(STDOUT_FILENO, "$ ", 2);
 }
