@@ -15,8 +15,8 @@ void prompt_user(char **av, char **env)
 	{
 		if (isatty(STDIN_FILENO))
 		{
-			printf("#cisfun$ ");
-			fflush(stdout);
+			_printf("#cisfun$ ");
+			/** fflush(stdout); **/
 		}
 		str = handl_getline();
 		if (str[0] != '\n')
@@ -33,7 +33,7 @@ void prompt_user(char **av, char **env)
 			{
 				free(str);
 				free(argv);
-				exit(EXIT_FAILURE);
+				exit(0);
 			}
 			new_str = file_check(argv[0]);
 			if (new_str == NULL)
