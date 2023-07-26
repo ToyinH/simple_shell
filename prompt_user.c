@@ -16,7 +16,7 @@ void prompt_user(char **av, char **env)
 		if (isatty(STDIN_FILENO))
 		{
 			_printf("#cisfun$ ");
-			/** fflush(stdout); **/
+			fflush(stdout);
 		}
 		str = handl_getline();
 		if (str[0] != '\n')
