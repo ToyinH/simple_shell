@@ -8,6 +8,7 @@
 #include <sys/wait.h>
 #include <stdbool.h>
 #include <dirent.h>
+#include <signal.h>
 
 void prompt_user(char **av, char **envt);
 int main(int ac, char **av, char **envt);
@@ -31,5 +32,8 @@ int _strlen(char *str);
 void _printf(char *str_in);
 char *_realloc(char *pntr, size_t new_mem_size);
 char *_memcpy(char *dest, char *src, size_t n);
+
+void handle_sigint (int signum __attribute__((unused)));
+typedef void (*sighandler_t)(int);
 
 #endif
