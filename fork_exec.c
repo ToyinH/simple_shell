@@ -8,7 +8,7 @@
 void fork_exec(char **argv, char **env, char **av)
 {
 	pid_t child_pid;
-	int status;
+	int status = 0;
 
 	child_pid = fork();
 	if (child_pid == -1)

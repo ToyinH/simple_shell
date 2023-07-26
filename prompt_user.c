@@ -33,7 +33,7 @@ void prompt_user(char **av, char **env)
 			{
 				free(str);
 				free(argv);
-				exit(0);
+				exit(EXIT_FAILURE);
 			}
 			new_str = file_check(argv[0]);
 			if (new_str == NULL)
