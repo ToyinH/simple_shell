@@ -27,19 +27,12 @@ void premade_path(char **argv, char **av, char **env, char *str);
 void unpath(char **argv, char **av, char **env, char *str);
 
 char *_strcat(char *str1, char *str2);
-
 char *_strcpy(char *str_to, char *str1);
-
 int _strlen(char *str);
-
 void _printf(char *str_in);
-
 char *_realloc(char *pntr, size_t new_mem_size);
-
 char *_memcpy(char *dest, char *src, size_t n);
-
 void handle_sigint (int signum __attribute__((unused)));
-
 typedef void (*sighandler_t)(int);
 
 #endif
