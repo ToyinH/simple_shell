@@ -6,7 +6,7 @@
 void free_argv2(char **argv)
 {
 	if (argv == NULL)
-		return (0);
+		return;
 	free(argv[0]);
 	free(argv);
 }
