@@ -1,5 +1,4 @@
 #include "simple_shell.h"
-
 /**
  * premade_path - function to handle premade path command
  * such as /bin/ls
@@ -8,7 +7,6 @@
  * @env: enviroment
  * @str: string
  */
-
 void premade_path(char **argv, char **av, char **env, char *str)
 {
 	if (path_check(argv[0]) == 0)
@@ -22,5 +20,7 @@ void premade_path(char **argv, char **av, char **env, char *str)
 	}
 	free(str);
 	if (argv[1] == NULL)
+	{
 		free(argv);
+	}
 }
