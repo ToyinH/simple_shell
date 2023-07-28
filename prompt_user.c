@@ -32,17 +32,17 @@ void prompt_user(char **av, char **env)
 			argv = handl_strtok(str, " ");
 			if (custom_strcmp("exit", argv[0]) == 0)
 			{
-				free(str);
+				/** free(str); **/
 				free(argv);
 				exit(EXIT_SUCCESS);
 			}
 			new_str = file_check(argv[0]);
 			if (new_str == NULL)
-				premade_path(argv, av, env, str);
+				premade_path(argv, av, env);
 			else if (new_str != NULL)
 			{
 				argv[0] = new_str;
-				unpath(argv, av, env, str);
+				unpath(argv, av, env);
 			}
 		}
 	}

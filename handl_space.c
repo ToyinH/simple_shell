@@ -38,7 +38,8 @@ int len(char *s)
 {
 	int j = 0;
 
-	while (s[j] != '\n')
+	/** while (s[j] != '\n') **/
+	while (s[j] != '\0')
 	{
 		j++;
 	}

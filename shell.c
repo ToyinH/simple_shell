@@ -1,6 +1,12 @@
 #include "simple_shell.h"
 
 /**
+ * global variable for buffer
+ */
+
+char buffer1[BUFFER_SIZE];
+
+/**
  * main - function that creates my shell
  * @ac: argument count;
  * @av: argument vector

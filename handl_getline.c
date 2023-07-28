@@ -10,7 +10,8 @@ char *handl_getline()
 {
 	char *string = NULL;
 	size_t n = 0;
-	ssize_t char_num = getline(&string, &n, stdin);
+	/** ssize_t char_num = getline(&string, &n, stdin); **/
+	ssize_t char_num = custom_getline(&string, &n);
 
 	if (char_num == -1)
 	{
