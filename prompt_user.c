@@ -32,14 +32,7 @@ void prompt_user(char **av, char **env)
 			argv = handl_strtok(str, " ");
 			if (custom_strcmp("exit", argv[0]) == 0)
 			{
-				if (argv[1] != NULL)
-				{
-					free_argv(argv);
-					exit((atoi)argv[1]);
-				}
-				/** free(str); **/
-				free(argv);
-				exit(EXIT_SUCCESS);
+				custom_exit(argv);
 			}
 			new_str = file_check(argv[0]);
 			if (new_str == NULL)
