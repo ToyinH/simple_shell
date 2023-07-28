@@ -14,7 +14,7 @@ void fork_exec(char **argv, char **env, char **av)
 	if (child_pid == -1)
 	{
 		free_argv(argv);
-		exit(EXIT_FAILURE);
+		exit(EXIT_SUCCESS);
 	}
 	if (child_pid == 0)
 	{
