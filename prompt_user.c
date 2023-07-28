@@ -20,7 +20,7 @@ void prompt_user(char **av, char **env)
 			fflush(stdout);
 		}
 		str = handl_getline();
-		if (str[0] != '\n')
+		if (space_character(str))
 		{
 			i = 0;
 			while (str[i])

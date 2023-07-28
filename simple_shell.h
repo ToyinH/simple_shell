@@ -34,5 +34,7 @@ char *_realloc(char *pntr, size_t new_mem_size);
 char *_memcpy(char *dest, char *src, size_t n);
 void handle_sigint (int signum __attribute__((unused)));
 typedef void (*sighandler_t)(int);
+bool space_character(char *strn);
+int len(char *s);
 
 #endif
