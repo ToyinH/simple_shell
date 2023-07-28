@@ -1,9 +1,4 @@
 #include "simple_shell.h"
-
-/**
- * global variable for buffer
- */
-
 char buffer1[BUFFER_SIZE];
 
 /**
