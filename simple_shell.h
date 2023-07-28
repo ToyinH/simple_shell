@@ -39,5 +39,6 @@ typedef void (*sighandler_t)(int);
 bool space_character(char *strn);
 int len(char *s);
 void custom_exit(char **argve);
+int _atoi(char *str);
 
 #endif

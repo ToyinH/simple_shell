@@ -8,7 +8,7 @@ void custom_exit(char **argve)
 {
 	if (argve[1] != NULL)
 	{
-		exit(atoi(argve[1]));
+		exit(_atoi(argve[1]));
 	}
 	/** free(str) **/
 	free(argve);
