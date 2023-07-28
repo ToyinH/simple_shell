@@ -4,6 +4,7 @@
  * prompt_user - function that handles user prompts
  * @av: argument vector
  * @env: environment
+ * Return: void
  */
 
 void prompt_user(char **av, char **env)
@@ -33,7 +34,7 @@ void prompt_user(char **av, char **env)
 			{
 				free(str);
 				free(argv);
-				exit(EXIT_FAILURE);
+				exit(EXIT_SUCCESS);
 			}
 			new_str = file_check(argv[0]);
 			if (new_str == NULL)
