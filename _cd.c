@@ -8,7 +8,7 @@
 
 int _cd(char **argv)
 {
-	if (argv[2] == NULL)
+	if (argv[1] == NULL)
 	{
 		/** No argument, use $HOME **/
 		const char *home_path = getenv("HOME");
