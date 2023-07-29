@@ -9,21 +9,20 @@
 int _setenv(char **argv, char **env)
 {
 	const char *name;
-	char **env_ptr;
+	/**char **env_ptr; **/
 	const char *new_value;
 	int result;
 	(void)env;
 
 	if (custom_strcmp("env", argv[0]) == 0)
 	{
-		extern char **environ;
-		env_ptr = environ;
-		while (*env_ptr != NULL)
+		/**env_ptr = environ;**/
+		/**while (*env_ptr != NULL)
 		{
 			_printf(*env_ptr);
 			_printf("\n");
 			env_ptr++;
-		}
+		}**/
 		name = argv[2];
 		new_value = argv[3];
 		result = setenv(name, new_value, 1);
@@ -33,13 +32,13 @@ int _setenv(char **argv, char **env)
 			perror("setenv error");
 			return (1);
 		}
-		env_ptr = environ;
-		while (*env_ptr != NULL)
+		/**env_ptr = environ;**/
+		/**while (*env_ptr != NULL)
 		{
 			_printf(*env_ptr);
 			_printf("\n");
 			env_ptr++;
-		}
+		}**/
 
 	}
 	return (0);
