@@ -12,10 +12,12 @@ int _setenv(char **argv, char **env)
 	char **env_ptr;
 	const char *new_value;
 	int result;
+	(void)env;
 
 	if (custom_strcmp("env", argv[0]) == 0)
 	{
-		env_ptr = env;
+		extern char **environ;
+		env_ptr = environ;
 		while (*env_ptr != NULL)
 		{
 			_printf(*env_ptr);
@@ -31,7 +33,7 @@ int _setenv(char **argv, char **env)
 			perror("setenv error");
 			return (1);
 		}
-		env_ptr = env;
+		env_ptr = environ;
 		while (*env_ptr != NULL)
 		{
 			_printf(*env_ptr);
