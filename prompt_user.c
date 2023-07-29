@@ -56,6 +56,7 @@ void prompt_user(char **av, char **env)
 				continue;
 			}
 			replace_variables(argv, env);
+			
 			new_str = file_check(argv[0]);
 
 			if (new_str == NULL)

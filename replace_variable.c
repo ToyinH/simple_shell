@@ -36,6 +36,7 @@ void replace_variables(char **argv, char **env)
 					{
 						char *value = &env[j][strlen(var) + 1];
 						argv[i] = strdup(value);
+						free(argv[i]);
 						break;
 					}
 				}
