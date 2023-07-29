@@ -24,7 +24,7 @@ int _setenv(char **argv)
 			env_ptr++;
 		}
 		name = argv[2];
-		new_value = "Holberton";
+		new_value = argv[3];
 		result = setenv(name, new_value, 1);
 		if (result != 0)
 		{
