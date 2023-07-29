@@ -53,7 +53,7 @@ void prompt_user(char **av, char **env)
 			}
 			else if (custom_strcmp("cd", argv[0]) == 0)
 			{
-				_cd2(argv);
+				_cd(argv);
 				free(argv);
 				continue;
 			}
