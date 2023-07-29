@@ -12,7 +12,15 @@ void custom_exit(char **argve)
 	if (argve[1] != NULL)
 	{
 		exit_status = _atoi(argve[1]);
-		if (exit_status < 0)
+		if (exit_status == 0)
+		{
+			err = "./hsh: 1: exit: Illegal number: ";
+			write(STDERR_FILENO, err, _strlen(err));
+			write(STDERR_FILENO, argve[1], _strlen(argve[1]));
+			write(STDERR_FILENO, "\n", 1);
+			exit(2);
+		}
+		else if (exit_status < 0)
 		{
 			err = "./hsh: 1: exit: Illegal number: -98\n";
 			write(STDERR_FILENO, err, _strlen(err));
