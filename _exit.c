@@ -6,9 +6,13 @@
  */
 void custom_exit(char **argve)
 {
+	int exit_status;
+
 	if (argve[1] != NULL)
 	{
-		exit(_atoi(argve[1]));
+		exit_status = _atoi(argve[1]);
+		free(argve);
+		exit(exit_status);
 	}
 	/** free(str) **/
 	free(argve);

@@ -40,5 +40,6 @@ bool space_character(char *strn);
 int len(char *s);
 void custom_exit(char **argve);
 int _atoi(char *str);
+char *file_check2(char **argv);
 
 #endif

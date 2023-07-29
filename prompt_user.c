@@ -31,12 +31,29 @@ void prompt_user(char **av, char **env)
 			}
 			argv = handl_strtok(str, " ");
 			if (custom_strcmp("exit", argv[0]) == 0)
-			{
 				custom_exit(argv);
-			}
 			new_str = file_check(argv[0]);
 			if (new_str == NULL)
 				premade_path(argv, av, env);
+			/** else if (new_str == NULL && custom_strcmp("/bin/", argv[0]) != 0)
+			{
+				new_str = file_check2(argv);
+				if (new_str != NULL)
+				{
+					argv[0] = new_str;
+					fork_exec(argv, env, av);
+				}
+				else
+				{
+					_printf(av[0]);
+					_printf(": No such file or directory\n");
+				}
+				if (argv[1] == NULL)
+					free_argv(argv);
+				else
+					free_argv2(argv);
+
+			} **/
 			else if (new_str != NULL)
 			{
 				argv[0] = new_str;
