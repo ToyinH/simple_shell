@@ -32,9 +32,18 @@ void prompt_user(char **av, char **env)
 			argv = handl_strtok(str, " ");
 			if (custom_strcmp("exit", argv[0]) == 0)
 				custom_exit(argv);
+			else if ((custom_strcmp("env", argv[0]) == 0)
+				&& argv[1] != NULL)
+			{
+				_setenv(argv);
+				free(argv);
+				continue;
+			}
 			new_str = file_check(argv[0]);
+
 			if (new_str == NULL)
 				premade_path(argv, av, env);
+
 			/** else if (new_str == NULL && custom_strcmp("/bin/", argv[0]) != 0)
 			{
 				new_str = file_check2(argv);

@@ -41,5 +41,6 @@ int len(char *s);
 void custom_exit(char **argve);
 int _atoi(char *str);
 char *file_check2(char **argv);
+int _setenv(char **argv);
 
 #endif
