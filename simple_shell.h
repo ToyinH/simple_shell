@@ -46,5 +46,6 @@ int _setenv2(char **argv, char **env);
 int _unsetenv(char **argv);
 int _cd(char **argv);
 void change_directory(const char *path);
+int _cd2(char **argv);
 
 #endif
