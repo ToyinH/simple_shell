@@ -39,7 +39,7 @@ void replace_variables(char **argv, char **env)
 						free(argv[i]);
 						break;
 					}
-					free(argv[i];
+				
 				}
 		}
 	}
