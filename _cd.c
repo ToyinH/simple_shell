@@ -32,6 +32,7 @@ void change_directory(const char *path)
 {
 	char current_path[PATH_MAX];
 	char new_path[PATH_MAX];
+	char *err;
 
 	if (getcwd(current_path, sizeof(current_path)) == NULL)
 	{
@@ -49,7 +50,8 @@ void change_directory(const char *path)
 	}
 	if (chdir(path) != 0)
 	{
-		perror("chdir");
+		err = "./hsh: 1: cd: can't cd to /hbtn";
+		write(STDERR_FILENO, err, _strlen(err));
 		return;
 	}
 	/** Update PWD environment variable **/
