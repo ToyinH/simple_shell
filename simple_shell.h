@@ -11,6 +11,7 @@
 #include <signal.h>
 #define BUFFER_SIZE 1024
 extern char buffer1[BUFFER_SIZE];
+extern int exit_status;
 
 void prompt_user(char **av, char **envt);
 int main(int ac, char **av, char **envt);
@@ -47,5 +48,6 @@ int _unsetenv(char **argv);
 int _cd(char **argv);
 void change_directory(const char *path);
 int _cd2(char **argv);
+void replace_variables(char **argv, char **env);
 
 #endif

@@ -1,12 +1,10 @@
 #include "simple_shell.h"
-#define MAX 10
 /**
  * prompt_user - function that handles user prompts
  * @av: argument vector
  * @env: environment
  * Return: void
  */
-
 void prompt_user(char **av, char **env)
 {
 	char *str = NULL, *new_str, **argv;
@@ -57,6 +55,7 @@ void prompt_user(char **av, char **env)
 				free(argv);
 				continue;
 			}
+			replace_variables(argv, env);
 			new_str = file_check(argv[0]);
 
 			if (new_str == NULL)

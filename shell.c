@@ -1,7 +1,7 @@
 #include "simple_shell.h"
 char buffer1[BUFFER_SIZE];
-
-/**
+int exit_status = 0;
+/*
  * main - function that creates my shell
  * @ac: argument count;
  * @av: argument vector
