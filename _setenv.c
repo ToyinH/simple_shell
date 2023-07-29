@@ -1,5 +1,4 @@
 #include "simple_shell.h"
-extern char **environ;
 
 /**
  * _setenv - function to handle setenv
@@ -7,7 +6,7 @@ extern char **environ;
  *
  * Return: return 0 on success
  */
-int _setenv(char **argv)
+int _setenv(char **argv, char **env)
 {
 	const char *name;
 	char **env_ptr;
@@ -16,7 +15,7 @@ int _setenv(char **argv)
 
 	if (custom_strcmp("env", argv[0]) == 0)
 	{
-		env_ptr = environ;
+		env_ptr = env;
 		while (*env_ptr != NULL)
 		{
 			_printf(*env_ptr);
@@ -32,7 +31,7 @@ int _setenv(char **argv)
 			perror("setenv error");
 			return (1);
 		}
-		env_ptr = environ;
+		env_ptr = env;
 		while (*env_ptr != NULL)
 		{
 			_printf(*env_ptr);

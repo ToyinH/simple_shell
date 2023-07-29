@@ -35,7 +35,7 @@ void prompt_user(char **av, char **env)
 			else if ((custom_strcmp("env", argv[0]) == 0)
 				&& argv[1] != NULL)
 			{
-				_setenv(argv);
+				_setenv(argv, env);
 				free(argv);
 				continue;
 			}
