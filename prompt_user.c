@@ -45,6 +45,12 @@ void prompt_user(char **av, char **env)
 				free(argv);
 				continue;
 			}
+			else if (custom_strcmp("unsetenv", argv[0]) == 0)
+			{
+				_unsetenv(argv);
+				free(argv);
+				continue;
+			}
 			new_str = file_check(argv[0]);
 
 			if (new_str == NULL)
