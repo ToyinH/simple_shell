@@ -23,5 +23,9 @@ int _atoi(char *str)
 		result = result * 10 + (*str - '0');
 		str++;
 	}
+	if (result == 0 && !(*str >= '0' && *str <= '9'))
+	{
+		return (0);
+	}
 	return (result * sign);
 }

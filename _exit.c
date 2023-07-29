@@ -18,6 +18,7 @@ void custom_exit(char **argve)
 			write(STDERR_FILENO, err, _strlen(err));
 			write(STDERR_FILENO, argve[1], _strlen(argve[1]));
 			write(STDERR_FILENO, "\n", 1);
+			free(argve);
 			exit(2);
 		}
 		else if (exit_status < 0)
