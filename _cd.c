@@ -36,7 +36,8 @@ void change_directory(const char *path)
 
 	if (getcwd(current_path, sizeof(current_path)) == NULL)
 	{
-		perror("getcwd");
+		err = "./hsh: 1: cd: can't cd to /hbtn";
+		write(STDERR_FILENO, err, _strlen(err));
 		return;
 	}
 	if (custom_strcmp(path, "-") == 0)
@@ -44,7 +45,8 @@ void change_directory(const char *path)
 		path = getenv("OLDPWD");
 		if (path == NULL)
 		{
-			_printf("cd: OLDPWD not set\n");
+			err = "./hsh: 1: cd: can't cd to /hbtn";
+			write(STDERR_FILENO, err, _strlen(err));
 			return;
 		}
 	}
@@ -57,7 +59,8 @@ void change_directory(const char *path)
 	/** Update PWD environment variable **/
 	if (getcwd(new_path, sizeof(new_path)) == NULL)
 	{
-		perror("getcwd");
+		err = "./hsh: 1: cd: can't cd to /hbtn";
+		write(STDERR_FILENO, err, _strlen(err));
 		return;
 	}
 	setenv("PWD", new_path, 1);
